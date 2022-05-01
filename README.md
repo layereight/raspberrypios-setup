@@ -14,20 +14,22 @@ raspberrypios-setup.sh <ZIPPED_RASPBERRYPIOS_IMAGE> <HOSTNAME>
 ```shell
 # typical run
 
-$ ~/bin/raspberrypios-setup.sh /data/software/raspberrypios/2021-10-30-raspios-bullseye-armhf-lite.zip homepi2
+$ ~/bin/raspberrypios-setup.sh /data/software/raspberrypios/2022-04-04-raspios-bullseye-armhf-lite.img.xz homecenter
 
-Zipped image: /data/software/raspberrypios/2021-10-30-raspios-bullseye-armhf-lite.zip
+Zipped image: /data/software/raspberrypios/2022-04-04-raspios-bullseye-armhf-lite.img.xz
 Working directory: /data/software/raspberrypios
 Unzipping...
-Unzipped image file: /data/software/raspberrypios/2021-10-30-raspios-bullseye-armhf-lite.img
+/data/software/raspberrypios/2022-04-04-raspios-bullseye-armhf-lite.img.xz (1/1)
+  100 %     296,6 MiB / 1.924,0 MiB = 0,154    82 MiB/s       0:23             
+Unzipped image file: /data/software/raspberrypios/2022-04-04-raspios-bullseye-armhf-lite.img
 Image sector size: 512 bytes
 Boot partition start at: 4194304 bytes
 Root partition start at: 272629760 bytes
-Temp image mounting directory: /tmp/tmp.nylmNVMNDa
+Temp image mounting directory: /tmp/tmp.imoqtszM1z
 Create /ssh in boot partition
 
 Contents of /etc/hostname in root partition:
-homepi2
+homecenter
 
 Contents of /etc/hosts in root partition:
 127.0.0.1	localhost
@@ -35,9 +37,9 @@ Contents of /etc/hosts in root partition:
 ff02::1		ip6-allnodes
 ff02::2		ip6-allrouters
 
-127.0.1.1		homepi2
+127.0.1.1		homecenter
 
-DONE. Your prepared image file is in /data/software/raspberrypios/2021-10-30-raspios-bullseye-armhf-lite.img
+DONE. Your prepared image file is in /data/software/raspberrypios/2022-04-04-raspios-bullseye-armhf-lite.img
 ```
 
 ## copy image
@@ -49,5 +51,5 @@ DONE. Your prepared image file is in /data/software/raspberrypios/2021-10-30-ras
 # /dev/mmcblk0 for sdcard reader
 # /dev/sdX for USB sticks
 #
-sudo dd if=/data/software/raspberrypios/2021-10-30-raspios-bullseye-armhf-lite.img of=/dev/mmcblk0 status=progress
+sudo dd if=/data/software/raspberrypios/2022-04-04-raspios-bullseye-armhf-lite.img of=/dev/mmcblk0 status=progress
 ```

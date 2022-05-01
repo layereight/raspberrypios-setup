@@ -5,14 +5,14 @@ set -e
 ZIPPED_IMAGE="${1}"
 HOSTNAME="${2}"
 WORK_DIR=$(dirname "${ZIPPED_IMAGE}")
+IMAGE_FILE=$(basename "${ZIPPED_IMAGE}")
+IMAGE_FILE=$(basename "${IMAGE_FILE}" .xz)
 
 echo "Zipped image: ${ZIPPED_IMAGE}"
 echo "Working directory: ${WORK_DIR}"
 
 echo "Unzipping..."
-unzip -qq -d "${WORK_DIR}" "${ZIPPED_IMAGE}"
-IMAGE_FILE=$(unzip -l "${ZIPPED_IMAGE}" | grep ".img" | tr -s " " | cut -d " " -f 4)
-
+xz -k -f -vv -d "${ZIPPED_IMAGE}"
 echo "Unzipped image file: ${WORK_DIR}/${IMAGE_FILE}"
 
 FDISK=$(fdisk -l "${WORK_DIR}/${IMAGE_FILE}")
