@@ -45,6 +45,16 @@ echo "Temp image mounting directory: ${MOUNT_DIR}"
 sudo mount -o offset=${BOOT_PARTITION_START} "${WORK_DIR}/${IMAGE_FILE}" "${MOUNT_DIR}"
 echo "Create /ssh in boot partition"
 sudo touch "${MOUNT_DIR}/ssh"
+
+#
+# precreate user with password
+# https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/
+#
+echo "Create /userconf in boot partition"
+PASSWORD_ENCRYPTED=$(echo 'raspberry' | openssl passwd -6 -stdin)
+echo "pi:${PASSWORD_ENCRYPTED}" | sudo tee "${MOUNT_DIR}/userconf"
+cat "${MOUNT_DIR}/userconf"
+
 sudo umount "${MOUNT_DIR}"
 
 #
