@@ -1,9 +1,17 @@
 #!/usr/bin/env sh
+#
+# typical run:
+#
+# ./raspberrypios-setup.sh /data/software/raspberrypios/2022-04-04-raspios-bullseye-armhf-lite.img.xz homecenter pi raspberry
+#
 
 set -e
 
 ZIPPED_IMAGE="${1}"
 HOSTNAME="${2}"
+USER="${3}"
+PASSWORD="${4}"
+
 WORK_DIR=$(dirname "${ZIPPED_IMAGE}")
 IMAGE_FILE=$(basename "${ZIPPED_IMAGE}")
 IMAGE_FILE=$(basename "${IMAGE_FILE}" .xz)
@@ -51,8 +59,8 @@ sudo touch "${MOUNT_DIR}/ssh"
 # https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/
 #
 echo "Create /userconf in boot partition"
-PASSWORD_ENCRYPTED=$(echo 'raspberry' | openssl passwd -6 -stdin)
-echo "pi:${PASSWORD_ENCRYPTED}" | sudo tee "${MOUNT_DIR}/userconf"
+PASSWORD_ENCRYPTED=$(echo "${PASSWORD}" | openssl passwd -6 -stdin)
+echo "${USER}:${PASSWORD_ENCRYPTED}" | sudo tee "${MOUNT_DIR}/userconf" > /dev/null
 cat "${MOUNT_DIR}/userconf"
 
 sudo umount "${MOUNT_DIR}"
