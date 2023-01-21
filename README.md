@@ -7,7 +7,14 @@
   * change the hostname
 * requires `sudo` permissions in order to mount an image partition in a loop device 
 
-## usage
+## Prerequisites
+
+* installed software:
+  * xz
+  * fdisk
+  * openssl
+
+## Usage
 
 ```shell
 raspberrypios-setup.sh <ZIPPED_RASPBERRYPIOS_IMAGE> <HOSTNAME> <USER> <PASSWORD>
@@ -15,24 +22,24 @@ raspberrypios-setup.sh <ZIPPED_RASPBERRYPIOS_IMAGE> <HOSTNAME> <USER> <PASSWORD>
 ```shell
 # typical run
 
-$ ~/bin/raspberrypios-setup.sh /data/software/raspberrypios/2022-04-04-raspios-bullseye-arm64-lite.img.xz homecenter pi raspberry
-Zipped image: /data/software/raspberrypios/2022-04-04-raspios-bullseye-arm64-lite.img.xz
+$ ./raspberrypios-setup.sh /data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img.xz homemeter pi raspberry
+Zipped image: /data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img.xz
 Working directory: /data/software/raspberrypios
 Unzipping...
-/home/stefan/Downloads/raspberrypios/2022-04-04-raspios-bullseye-arm64-lite.img.xz (1/1)
-  100 %     270.4 MiB / 1,908.0 MiB = 0.142    89 MiB/s       0:21             
-Unzipped image file: /data/software/raspberrypios/2022-04-04-raspios-bullseye-arm64-lite.img
+/data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img.xz (1/1)
+  100 %     338.0 MiB / 1,788.0 MiB = 0.189    78 MiB/s       0:23             
+Unzipped image file: /data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img
 Image sector size: 512 bytes
 Boot partition start at: 4194304 bytes
 Root partition start at: 272629760 bytes
-Temp image mounting directory: /tmp/tmp.shiI6sUT6a
-[sudo] password for user: 
+Temp image mounting directory: /tmp/tmp.qHXkAR9fLF
+[sudo] password for stefan: 
 Create /ssh in boot partition
 Create /userconf in boot partition
-pi:$6$s/nXcYvYK0XsBqDk$YbcReXBy2ql8k50jzUxnPy7mS21vizzCx7/nZHxoEH/lmBUBAhs6RXppezd65hWW/.iC4haUhGPjRSa9zuuGM1
+pi:$6$KQ7rR/70lFxiM.tw$BYXIWBQlf6roie29WnvsIGR0VJ9y6dvRiG44lGFDBvkUvcVliQ2XOPChdtTd.4jO6XZm4iD.rB6TwCeY5GRSP.
 
 Contents of /etc/hostname in root partition:
-homecenter
+homemeter
 
 Contents of /etc/hosts in root partition:
 127.0.0.1	localhost
@@ -40,12 +47,12 @@ Contents of /etc/hosts in root partition:
 ff02::1		ip6-allnodes
 ff02::2		ip6-allrouters
 
-127.0.1.1		homecenter
+127.0.1.1		homemeter
 
-DONE. Your prepared image file is in /data/software/raspberrypios/2022-04-04-raspios-bullseye-arm64-lite.img
+DONE. Your prepared image file is in /data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img
 ```
 
-## copy image
+## Copy the resulting image
 
 * in a separate step
 ```shell
