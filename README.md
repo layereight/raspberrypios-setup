@@ -61,5 +61,5 @@ DONE. Your prepared image file is in /data/software/raspberrypios/2022-09-22-ras
 # /dev/mmcblk0 for sdcard reader
 # /dev/sdX for USB sticks
 #
-sudo dd if=/data/software/raspberrypios/2022-04-04-raspios-bullseye-arm64-lite.img of=/dev/mmcblk0 status=progress
+sudo dd if=/data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img of=/dev/mmcblk0 status=progress
 ```
