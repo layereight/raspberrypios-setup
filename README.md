@@ -22,24 +22,24 @@ raspberrypios-setup.sh <ZIPPED_RASPBERRYPIOS_IMAGE> <HOSTNAME> <USER> <PASSWORD>
 ```shell
 # typical run
 
-$ ./raspberrypios-setup.sh /data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img.xz homemeter pi raspberry
-Zipped image: /data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img.xz
+$ ~/bin/raspberrypios-setup.sh /data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img.xz homecenter pi raspberry
+Zipped image: /data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img.xz
 Working directory: /data/software/raspberrypios
 Unzipping...
-/data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img.xz (1/1)
+/data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img.xz (1/1)
   100 %     338.0 MiB / 1,788.0 MiB = 0.189    78 MiB/s       0:23             
-Unzipped image file: /data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img
+Unzipped image file: /data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img
 Image sector size: 512 bytes
 Boot partition start at: 4194304 bytes
 Root partition start at: 272629760 bytes
 Temp image mounting directory: /tmp/tmp.qHXkAR9fLF
-[sudo] password for stefan: 
+[sudo] password for user: 
 Create /ssh in boot partition
 Create /userconf in boot partition
 pi:$6$KQ7rR/70lFxiM.tw$BYXIWBQlf6roie29WnvsIGR0VJ9y6dvRiG44lGFDBvkUvcVliQ2XOPChdtTd.4jO6XZm4iD.rB6TwCeY5GRSP.
 
 Contents of /etc/hostname in root partition:
-homemeter
+homecenter
 
 Contents of /etc/hosts in root partition:
 127.0.0.1	localhost
@@ -47,9 +47,9 @@ Contents of /etc/hosts in root partition:
 ff02::1		ip6-allnodes
 ff02::2		ip6-allrouters
 
-127.0.1.1		homemeter
+127.0.1.1		homecenter
 
-DONE. Your prepared image file is in /data/software/raspberrypios/2022-09-22-raspios-bullseye-armhf-lite.img
+DONE. Your prepared image file is in /data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img
 ```
 
 ## Copy the resulting image
