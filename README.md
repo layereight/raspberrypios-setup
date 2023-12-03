@@ -22,21 +22,21 @@ raspberrypios-setup.sh <ZIPPED_RASPBERRYPIOS_IMAGE> <HOSTNAME> <USER> <PASSWORD>
 ```shell
 # typical run
 
-$ ~/bin/raspberrypios-setup.sh /data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img.xz homecenter pi raspberry
-Zipped image: /data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img.xz
+$ ~/bin/raspberrypios-setup.sh /data/software/raspberrypios/2023-10-10-raspios-bookworm-arm64-lite.img.xz homecenter pi raspberry
+Zipped image: /data/software/raspberrypios/2023-10-10-raspios-bookworm-arm64-lite.img.xz
 Working directory: /data/software/raspberrypios
 Unzipping...
-/data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img.xz (1/1)
-  100 %     338.0 MiB / 1,788.0 MiB = 0.189    78 MiB/s       0:23             
-Unzipped image file: /data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img
+/data/software/raspberrypios/2023-10-10-raspios-bookworm-arm64-lite.img.xz (1/1)
+  100 %     435.5 MiB / 2,596.0 MiB = 0.168    91 MiB/s       0:28
+Unzipped image file: /data/software/raspberrypios/2023-10-10-raspios-bookworm-arm64-lite.img
 Image sector size: 512 bytes
 Boot partition start at: 4194304 bytes
-Root partition start at: 272629760 bytes
-Temp image mounting directory: /tmp/tmp.qHXkAR9fLF
+Root partition start at: 541065216 bytes
+Temp image mounting directory: /tmp/tmp.AmJ2gxFM18
 [sudo] password for user: 
 Create /ssh in boot partition
 Create /userconf in boot partition
-pi:$6$KQ7rR/70lFxiM.tw$BYXIWBQlf6roie29WnvsIGR0VJ9y6dvRiG44lGFDBvkUvcVliQ2XOPChdtTd.4jO6XZm4iD.rB6TwCeY5GRSP.
+pi:$6$HoeFfPEBuL/l3GuT$InOiOegCQ8MDKrfiKWKsWuDok60eb1.tkafhpvplaI49Ufl1oM1/VlsPKRCFPENQAzCSEXVc.QRrJbaqUZCZE.
 
 Contents of /etc/hostname in root partition:
 homecenter
@@ -49,7 +49,7 @@ ff02::2		ip6-allrouters
 
 127.0.1.1		homecenter
 
-DONE. Your prepared image file is in /data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img
+DONE. Your prepared image file is in /data/software/raspberrypios/2023-10-10-raspios-bookworm-arm64-lite.img
 ```
 
 ## Copy the resulting image
@@ -61,5 +61,5 @@ DONE. Your prepared image file is in /data/software/raspberrypios/2022-09-22-ras
 # /dev/mmcblk0 for sdcard reader
 # /dev/sdX for USB sticks
 #
-sudo dd if=/data/software/raspberrypios/2022-09-22-raspios-bullseye-arm64-lite.img of=/dev/mmcblk0 status=progress
+sudo dd if=/data/software/raspberrypios/2023-10-10-raspios-bookworm-arm64-lite.img of=/dev/mmcblk0 status=progress
 ```
