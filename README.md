@@ -22,21 +22,21 @@ raspberrypios-setup.sh <ZIPPED_RASPBERRYPIOS_IMAGE> <HOSTNAME> <USER> <PASSWORD>
 ```shell
 # typical run
 
-$ ~/bin/raspberrypios-setup.sh /data/software/raspberrypios/2023-12-05-raspios-bookworm-arm64-lite.img.xz homecenter pi raspberry
-Zipped image: /data/software/raspberrypios/2023-12-05-raspios-bookworm-arm64-lite.img.xz
+$ ~/bin/raspberrypios-setup.sh /data/software/raspberrypios/2023-12-11-raspios-bookworm-arm64-lite.img.xz homecenter pi raspberry 
+Zipped image: /data/software/raspberrypios/2023-12-11-raspios-bookworm-arm64-lite.img.xz
 Working directory: /data/software/raspberrypios
 Unzipping...
-/data/software/raspberrypios/2023-12-05-raspios-bookworm-arm64-lite.img.xz (1/1)
-  100 %     433.9 MiB / 2,612.0 MiB = 0.166    70 MiB/s       0:37             
-Unzipped image file: /data/software/raspberrypios/2023-12-05-raspios-bookworm-arm64-lite.img
+/data/software/raspberrypios/2023-12-11-raspios-bookworm-arm64-lite.img.xz (1/1)
+  100 %     432.9 MiB / 2,612.0 MiB = 0.166    69 MiB/s       0:37             
+Unzipped image file: /data/software/raspberrypios/2023-12-11-raspios-bookworm-arm64-lite.img
 Image sector size: 512 bytes
 Boot partition start at: 4194304 bytes
 Root partition start at: 541065216 bytes
-Temp image mounting directory: /tmp/tmp.YANpLi7V0h
+Temp image mounting directory: /tmp/tmp.QoRrJ002v1
 [sudo] password for user: 
 Create /ssh in boot partition
 Create /userconf in boot partition
-pi:$6$5XO.qtepo0Wk25Vi$Ho5WFB/lzdv7WSQYsbd2uJKLTDpQD3.4DT6i.u6O82Yz29bi1PWo18J6bKUoCfQXKZQjbuP4W1qY6aRn6oxcd.
+pi:$6$SgNXvXs7/GG82P0y$u3Ko.qBBDPvwjR2gsdI27TGqpDGk7G302G/OgeXAyDj3MpiuxvpKWorBFmYvU4rZM2MNUxj4crZ4KSmsw2NhT.
 
 Contents of /etc/hostname in root partition:
 homecenter
@@ -49,7 +49,7 @@ ff02::2		ip6-allrouters
 
 127.0.1.1		homecenter
 
-DONE. Your prepared image file is in /data/software/raspberrypios/2023-12-05-raspios-bookworm-arm64-lite.img
+DONE. Your prepared image file is in /data/software/raspberrypios/2023-12-11-raspios-bookworm-arm64-lite.img
 ```
 
 ## Copy the resulting image
@@ -61,5 +61,5 @@ DONE. Your prepared image file is in /data/software/raspberrypios/2023-12-05-ras
 # /dev/mmcblk0 for sdcard reader
 # /dev/sdX for USB sticks
 #
-sudo dd if=//data/software/raspberrypios/2023-12-05-raspios-bookworm-arm64-lite.img of=/dev/mmcblk0 status=progress
+sudo dd if=/data/software/raspberrypios/2023-12-11-raspios-bookworm-arm64-lite.img of=/dev/mmcblk0 status=progress
 ```
