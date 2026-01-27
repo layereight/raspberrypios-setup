@@ -81,3 +81,5 @@ sudo umount "${MOUNT_DIR}"
 
 echo
 echo "DONE. Your prepared image file is in ${WORK_DIR}/${IMAGE_FILE}"
+echo "You may copy the image file to an SD Card or USB thumb drive, e.g. like so (output device might differ, see lsblk):"
+echo "sudo dd if=${WORK_DIR}/${IMAGE_FILE} of=/dev/mmcblk0 status=progress"

@@ -50,6 +50,8 @@ ff02::2		ip6-allrouters
 127.0.1.1		homecenter
 
 DONE. Your prepared image file is in /data/software/raspberrypios/2025-12-04-raspios-trixie-arm64-lite.img
+You may copy the image file to an SD Card or USB thumb drive, e.g. like so (output device might differ, see lsblk):
+sudo dd if=/data/software/raspberrypios/2025-12-04-raspios-trixie-arm64-lite.img of=/dev/mmcblk0 status=progress
 ```
 
 ## Copy the resulting image
